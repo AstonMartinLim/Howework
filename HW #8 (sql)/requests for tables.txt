@@ -1,0 +1,40 @@
+distinct
+select distinct name from actors;
+select distinct genre from genres;
+select distinct genre_id from genres_films;
+select distinct actor_id from actors_films;
+
+
+where
+select * from actors where length (name) > 13;
+select name from actors where length (name) > 12;
+select name from films where length (name) < 8;
+select genre from genres where id between 3 and 7;
+select release_date from films where release_date > ‘2017-01-01’;
+select Date_of_Birth from actors where Date_of_Birth between ‘1950-02-02’ and ‘1980-02-03’;
+
+
+group by
+select genre_id, count (*) from genres_films group by genre_id;
+select actor_id, count (*) from actors_films group by 1;
+select film_id from actors_films group by film_id;
+
+
+having
+select film_id, count (*) from genres_films group by film_id having count (*) > 2;
+select actor_id, count (*) from actors_films group by actor_id having count (*) > 3;
+
+
+order by
+select name from actors order by name;
+select date_of_birth from actors order by date_of_birth;
+select * from genres order by genre;
+select name from actors order by name desc;
+select name from films order by name asc;
+select release_date from films order by release_date asc;
+select date_of_birth from actors order by date_of_birth asc;
+
+
+limit
+select * from actors order by name limit 8;
+select name from films order by name limit 5 offset 3;
