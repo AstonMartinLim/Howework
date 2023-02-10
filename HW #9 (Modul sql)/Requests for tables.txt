@@ -1,0 +1,28 @@
+Create table modul (id serial, name varchar (100), pwd varchar(100), email varchar (100), gender varchar (50));
+
+Insert into modul (name, pwd, email, gender) values (‘Vasya’, ‘21341234qwfsdf’, ‘mmm@mmail.com’, ‘m’), (‘Alex’, ‘21341234’, ‘mmm@gmail.com’, ‘m’), (‘Alexey’, ‘qq21341234Q’, ‘alexey@gmail.com’, ‘m’), (‘Helen’, ‘MarryMeeee’, ‘hell@gmail.com’, ‘f'), (‘Jenny’, ‘SmakeMyb’, ‘eachup@gmail.com’, ‘f’), (‘Lora’, ‘burn23’, ‘tpicks@gmail.com’, ‘f’);
+
+
+# request for task 1
+
+select case
+when gender = ‘m’ then ‘This is ’ || name || ‘, he has email ’ || email
+else ‘This is ’ || name || ‘, she has email ’ || email
+end as Info from modul;
+
+
+# request for task 2
+
+select case 
+when gender = ‘m’ then ‘We have ’ || count (gender = ‘m’) || ‘ boys!’
+else ‘We have ’ || count (gender = ‘f’) || ‘ girls!’
+end as “Gender information:” from modul group by gender;
+
+
+# request for task 3
+
+select name, count(vocabulary_id) as words from vocabulary inner join word on (vocabulary.id = word.vocabulary_id) group by name;
+
+or
+
+select name, count(vocabulary_id) as words from word inner join vocabulary on (vocabulary.id = word.vocabulary_id) group by name;
