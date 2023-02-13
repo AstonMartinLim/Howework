@@ -7,7 +7,7 @@ class PropertiesChemicalElement:
         self.BoilingTemperature = BoilingTemperature
 
 
-    def _convert_temperature_(self, Temperature, Scale):
+    def _convert_temperature(self, Temperature, Scale):
         if Scale == 'F':
             return (Temperature - 32)*5/9
         if Scale == 'K':
@@ -16,7 +16,7 @@ class PropertiesChemicalElement:
  
     def chek_status (self, Temperature, Scale):
         if Scale == 'F' or Scale == 'K':
-            Conv_Temperature = self._convert_temperature_(Temperature, Scale)
+            Conv_Temperature = self._convert_temperature(Temperature, Scale)
         else:
             Conv_Temperature = Temperature
        
