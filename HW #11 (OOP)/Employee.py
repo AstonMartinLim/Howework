@@ -5,7 +5,7 @@ class Employee:
         self.salary_per_day = salary_per_day
 
     def __lt__(self, other):
-        return self.weight < other.weight
+        return self.salary_per_day < other.salary_per_day
 
     def __le__(self, other):
         return self.salary_per_day <= other.salary_per_day
@@ -58,11 +58,11 @@ class Developer(Employee):
         return super().work().rstrip('.')+f' and start coding.'
 
     def compare_tech(self, other):
-        if len(self.tech_stack) > len(other.tech_stack):
+        if self.tech_stack > other.tech_stack:
             return f'{self.name} full stack is biggest then {other.name}'
-        if len(self.tech_stack) == len(other.tech_stack):
+        if self.tech_stack == other.tech_stack:
             return f'{self.name} full stack is equal {other.name}'
-        if len(self.tech_stack) < len(other.tech_stack):
+        if self.tech_stack < other.tech_stack:
             return f'{other.name} full stack is biggest then {self.name}'
 
 
