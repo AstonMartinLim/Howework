@@ -1,0 +1,12 @@
+Exception arise: 2023-02-24 19:31:09.675404 | traceback: Traceback (most recent call last):
+  File "C:\Users\AR\Desktop\Python\A-level\那\HW 10 (oop)\HW\app.py", line 44, in <module>
+    main()
+  File "C:\Users\AR\Desktop\Python\A-level\那\HW 10 (oop)\HW\app.py", line 10, in main
+    john = Developer('John', 300.0, 'john@email.com', ['Java', 'JS'])
+  File "C:\Users\AR\Desktop\Python\A-level\那\HW 10 (oop)\HW\Developer.py", line 12, in __init__
+    super().__init__(name, salary_per_day, email)
+  File "C:\Users\AR\Desktop\Python\A-level\那\HW 10 (oop)\HW\Employee.py", line 16, in __init__
+    self.validate()
+  File "C:\Users\AR\Desktop\Python\A-level\那\HW 10 (oop)\HW\Employee.py", line 65, in validate
+    raise EmailAlreadyExistsException
+CustomExeption.EmailAlreadyExistsException
