@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+    {% block header %}
+    <h2>The most popular blogs</h2>
+    {% endblock %}
+
+{% block urls%}
+    <div>
+        <a href="{% url 'main' %}">main</a>
+    <br>
+        <a href="{% url 'login' %}">login</a>
+    <br>
+        <a href="{% url 'blog_detail' %}">blog detail</a>
+    <br>
+        <a href="{% url 'profile' %}">profile</a>
+    <br>
+        <a href="{% url 'register' %}">register new user</a>
+    </div>
+{% endblock %}
+
+
+    {% block content %}
+        <div>
+        <h3 style="color: darkblue">Blog 1</h3>
+        <h3 style="color: darkblue">Blog 2</h3>
+        <h3 style="color: darkblue">Blog 3</h3>
+        <h3 style="color: darkblue">Blog 4</h3>
+        <h3 style="color: darkblue">Blog 5</h3>
+        <h3 style="color: darkblue">Blog 6</h3>
+        <h3 style="color: darkblue">Blog 7</h3>
+        <h3 style="color: darkblue">Blog 8</h3>
+        <h3 style="color: darkblue">Blog 9</h3>
+         </div>
+    {% endblock %}
+
+
+
