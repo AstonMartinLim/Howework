@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h2>Topics</h2>
+
+    {% endblock %}
+
+
+{% block urls %}
+    <div>
+        <a href="{% url 'main' %}">Main</a>
+    <br>
+        <a href="{% url 'about' %}">About</a>
+    <br>
+        <a href="{% url 'profile' %}">Profile</a>
+    <br>
+        <a href="{% url 'add_post' %}">Add post</a>
+    <br>
+        <a href="{% url 'add_comment' %}">Add comment</a>
+    </div>
+{% endblock %}
+
+ {% block content %}
+     <div>
+
+      {% for topic in topics %}
+
+          <h3>{{ topic }}</h3>
+
+   {% endfor %}
+     </div>
+    {% endblock %}

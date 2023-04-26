@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h2>Detail about post</h2>
+
+    {% endblock %}
+
+
+{% block urls %}
+    <div>
+        <a href="{% url 'main' %}">Main</a>
+    <br>
+        <a href="{% url 'about' %}">About</a>
+    <br>
+        <a href="{% url 'add_post' %}">Add post</a>
+    <br>
+        <a href="{% url 'add_comment' %}">Add comment</a>
+    <br>
+        <a href="{% url 'profile' %}">Profile</a>
+    </div>
+{% endblock %}
+
+ {% block content %}
+     <div>
+     <h1>{{ post.title }} </h1><br>
+         {{ post.content }} <br><br>
+         Post created: {{ post.created_at }} <br>
+         Post updated: {{ post.updated_at }} <br>
+         Author: {{ post.author }} <br>
+     </div>
+     <br><br>
+     <form action="{% url 'add_comment'  %}">
+      <button type="submit">Add comment</button>
+     </form>
+    {% endblock %}
