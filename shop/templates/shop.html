@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+    {% block header %}
+    <h3>Site navigations</h3>
+    {% endblock %}
+
+{% block urls %}
+    <div>
+        <a href="{% url 'add_product' %}">Add new product</a><br>
+        <a href="{% url 'return_product' %}">Return product</a><br>
+        <a href="{% url 'list_of_purchased_products' %}">List of purchased products</a><br>
+
+    </div>
+{% endblock %}
+
+
+{% block topic %}
+{% endblock %}
+
+
+{% block content %}
+    <h1> List of products </h1>
+    {% for product in product_list %}
+    <h3>Product: {{ product.name_of_product }}, Descriptions: {{ product.description }},
+        Price: {{ product.price }}, Quantity: {{ product.quantity }}
+        <form method='post' action="{% url 'cart' product.id %}">
+        {% csrf_token %}
+        {{ purchase_form.as_p }}
+        <input type="submit" value="Buy it">
+        </form>
+    </h3>
+    {% endfor %}
+{% endblock %}
+

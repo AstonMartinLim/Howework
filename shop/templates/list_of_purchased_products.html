@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h2>List of purchase product</h2>
+
+    {% endblock %}
+
+
+{% block urls %}
+
+{% endblock %}
+
+ {% block content %}
+     <div>
+     Order #{{purchase.id}}, product: {{ purchase.product }},
+         quantity: {{ purchase.quantity }}, sum: {{ purchase.total_sum }},
+         time of purchase: {{ purchase.time_of_purchase }} <br><br>
+         <form action="{% url 'return_product'  %}">
+         <button type="submit">Return purchase</button> </form>
+        <br>
+     </div>
+
+    {% endblock %}

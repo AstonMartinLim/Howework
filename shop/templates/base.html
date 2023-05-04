@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+</head>
+<body style="background-color:blanchedalmond">
+    <div>
+        <h1 style="color:blue">Online shop</h1>
+    </div>
+
+    <div>
+    {% block header %}
+    {% endblock %}
+    </div>
+
+    <div>
+    {% block urls %}
+    {% endblock %}
+    </div>
+
+    <div>
+        {% block login %}
+          {% if user.is_authenticated %}
+              <h4>Hello {{ user.username }}</h4>
+              <form action="{% url 'logout' %}">
+                  <button type="submit">Logout</button>
+              </form>
+          {% else %}
+          You are not logged in
+          {% endif %}
+          <br>
+        {% endblock %}
+    </div>
+
+    <div>
+    {% block content %}
+    {% endblock %}
+    </div>
+
+</body>
+</html>
