@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h2>Change product</h2>
+
+    {% endblock %}
+
+
+{% block urls %}
+    <div>
+        <a href="{% url 'shop' %}">Shop</a>
+    <br>
+        <a href="{% url 'change_product' %}">Change product</a>
+    <br>
+        <a href="{% url 'add_product' %}">Add new product</a>
+    <br>
+        <a href="{% url 'return_product' %}">Return product</a>
+    </div>
+{% endblock %}
+
+ {% block content %}
+     <div>
+     <h1> Change product </h1><br>
+         <form method='post'>
+             {% csrf_token %}
+
+             {{ form.as_p }}
+
+         <input type="submit" value="Change product">
+         </form>
+
+     </div>
+    {% endblock %}
