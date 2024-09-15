@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h2>Detail about blog</h2>
+
+    {% endblock %}
+
+
+{% block urls %}
+    <div>
+        <a href="{% url 'main' %}">main</a>
+    <br>
+        <a href="{% url 'about' %}">about</a>
+    <br>
+        <a href="{% url 'login' %}">login</a>
+    <br>
+        <a href="{% url 'profile' %}">profile</a>
+    <br>
+        <a href="{% url 'register' %}">register new user</a>
+    </div>
+{% endblock %}
+
+ {% block content %}
+     <div>
+     Description <br>
+     Strings are useful for holding data that can be represented in text form.
+     Some of the most-used operations on strings are to check their length, to build and concatenate
+     them using the + and += string operators, checking for the existence or location
+     of substrings with the indexOf() method, or extracting substrings with the substring() method.
+     </div>
+    {% endblock %}

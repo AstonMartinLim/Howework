@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+    {% block header %}
+    <h2>Page to sign in</h2>
+    {% endblock %}
+
+
+{% block urls %}
+    <div>
+        <a href="{% url 'main' %}">main</a>
+    <br>
+        <a href="{% url 'about' %}">about</a>
+    <br>
+        <a href="{% url 'blog_detail' %}">blog detail</a>
+    <br>
+        <a href="{% url 'profile' %}">profile</a>
+    <br>
+        <a href="{% url 'register' %}">register new user</a>
+    </div>
+{% endblock %}
+
+  {% block content %}
+        <div>
+        Form to log in
+        </div>
+    {% endblock %}
