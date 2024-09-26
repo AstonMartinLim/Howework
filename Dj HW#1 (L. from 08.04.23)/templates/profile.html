@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+    {% block header %}
+    <h2>Users profile</h2>
+    {% endblock %}
+
+
+{% block urls %}
+    <div>
+        <a href="{% url 'main' %}">Main</a>
+    <br>
+        <a href="{% url 'about' %}">About</a>
+    <br>
+        <a href="{% url 'add_post' %}">Add post</a>
+    <br>
+        <a href="{% url 'add_comment' %}">Add comment</a>
+    </div>
+{% endblock %}
+
+    {% block content %}
+        <div>
+        Users info
+        </div>
+    {% endblock %}

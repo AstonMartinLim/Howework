@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+
+    {% block header %}
+    <h3>Site navigations</h3>
+    {% endblock %}
+
+{% block urls %}
+    <div>
+        <a href="{% url 'about' %}">About</a>
+    <br>
+        <a href="{% url 'add_post' %}">Add post</a>
+    <br>
+        <a href="{% url 'add_comment' %}">Add comment</a>
+    <br>
+        <a href="{% url 'profile' %}">Profile</a>
+    <br>
+    </div>
+{% endblock %}
+
+{% block topic %}
+      <h1>Post topic</h1>
+      {% for topic in topics %}
+          <form action="{% url 'topics'  %}">
+          <h3> <a href="{% url 'topics'%}?id={{ topic.id }}"> {{ topic.title }}</a></h3>
+          </form>
+      {% endfor %}
+{% endblock %}
+
+
+{% block content %}
+   <h3> Search post </h3>
+   <form action="{% url 'main' %}">
+       <label>
+           <input type="text" name="search_text">
+       </label>
+       <input type="submit" value="Search">
+       <form action="{% url 'main' %}">
+                  <button>Clear</button>
+       </form>
+   </form>
+    <br><br>
+
+    <h1> All posts </h1>
+   {% for post in posts %}
+       <h2> <a href="{% url 'post_details' post.slug %}"> {{ post.title }}</a></h2><br>
+       {{ post.content }} <br><br>
+       Author: {{ post.author }} <br>
+       Created at: {{ post.created_at }} <br><br>
+   {% endfor %}
+
+    <br>
+    Start a blog
+        </div>
+    {% endblock %}
